@@ -15,3 +15,10 @@ export type IdentifyContactParams = {
   phoneNumber: string | null;
   email: string | null;
 };
+
+export type IdentifyContactResponse = {
+  primaryContatctId: number;
+  emails: string[];
+  phoneNumbers: string[];
+  secondaryContactIds: number[];
+};

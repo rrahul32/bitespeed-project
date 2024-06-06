@@ -1,6 +1,6 @@
 import express from "express";
 import "dotenv/config";
-import { identifyContact } from "./services/contact";
+import { identifyContact } from "./controller/contact";
 import bodyParser from "body-parser";
 
 const app = express();
