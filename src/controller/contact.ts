@@ -12,7 +12,10 @@ export const identifyContact = async (req: Request, res: Response) => {
     res.status(422);
   } else {
     try {
-      const result = await identifyContactService(params);
+      const result = await identifyContactService({
+        email: params.email ?? null,
+        phoneNumber: params.phoneNumber ?? null,
+      });
       res.status(200).json({
         contact: result,
       });
