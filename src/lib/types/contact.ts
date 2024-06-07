@@ -17,7 +17,7 @@ export type IdentifyContactParams = {
 };
 
 export type IdentifyContactResponse = {
-  primaryContatctId: number;
+  primaryContactId: number;
   emails: string[];
   phoneNumbers: string[];
   secondaryContactIds: number[];
