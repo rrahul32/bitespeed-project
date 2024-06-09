@@ -4,7 +4,7 @@ export type Contact = {
   id: number;
   phoneNumber: string | null;
   email: string | null;
-  linkedId: string | null;
+  linkedId: number | null;
   linkPrecedence: LinkPrecedenceEnum;
   createdAt: Date;
   updatedAt: Date;
