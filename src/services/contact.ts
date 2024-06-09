@@ -87,11 +87,14 @@ const getPrimaryContact = async (
 
   //take the first contact as primary and then update the rest to secondary
   const [primaryContact, ...secondaryContacts] = contacts;
-  if (secondaryContacts && secondaryContacts.length) {
-    await updateToSecondaryContacts(
-      secondaryContacts.map((item) => item.id),
-      primaryContact.id
-    );
+  const updateIds: number[] = [];
+  secondaryContacts.forEach((contact) => {
+    if (contact.linkedId !== primaryContact.id) {
+      updateIds.push(contact.id);
+    }
+  });
+  if (updateIds && updateIds.length) {
+    await updateToSecondaryContacts(updateIds, primaryContact.id);
   }
   return primaryContact;
 };
